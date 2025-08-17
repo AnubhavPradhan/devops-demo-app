@@ -1,7 +1,22 @@
+# Dependencies
 node_modules
+npm-debug.log
+*.log
+
+# Docker-related
 Dockerfile
 .dockerignore
+
+# Git & CI
 .git
 .gitignore
-*.log
+.github
+
+# Env & OS
 .env
+.env.*
+.DS_Store
+
+# Editor/coverage (optional but nice)
+.vscode
+coverage

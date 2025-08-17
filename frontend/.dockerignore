@@ -1,6 +1,23 @@
+# Dependencies
 node_modules
 npm-debug.log
-.DS_Store
+*.log
 
-# Ignore build 
-frontend/build
+# Docker-related
+Dockerfile
+.dockerignore
+
+# Git & CI
+.git
+.gitignore
+.github
+
+# Env & OS
+.env
+.env.*
+.DS_Store
+.vscode
+
+# Build artifacts (we build inside Docker)
+dist
+build
