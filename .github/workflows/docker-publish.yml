@@ -36,10 +36,8 @@ jobs:
         with:
           images: ${{ secrets.DOCKERHUB_USERNAME }}/demoapp
           tags: |
+            type=raw,value=backend,enable={{is_default_branch}}
             type=raw,value=backend-latest,enable={{is_default_branch}}
-            type=ref,event=branch,prefix=backend-
-            type=ref,event=tag,prefix=backend-
-            type=sha,format=long,prefix=backend-sha-
 
       - name: Build and push backend
         uses: docker/build-push-action@v6
@@ -78,10 +76,8 @@ jobs:
         with:
           images: ${{ secrets.DOCKERHUB_USERNAME }}/demoapp
           tags: |
+            type=raw,value=frontend,enable={{is_default_branch}}
             type=raw,value=frontend-latest,enable={{is_default_branch}}
-            type=ref,event=branch,prefix=frontend-
-            type=ref,event=tag,prefix=frontend-
-            type=sha,format=long,prefix=frontend-sha-
 
       - name: Build and push frontend
         uses: docker/build-push-action@v6
